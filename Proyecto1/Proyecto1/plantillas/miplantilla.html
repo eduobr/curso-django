@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include "navegacion/barra.html" %}
+    {% if nombre_persona == 'Eduardo' %}
+        <p>El curso lo imparte el profesor titular</p>
+    {% else %}
+        <p>El curso lo imparte el profesor suplente</p>
+    {% endif %}
+
+    {# Comentario en formato python solamente una linea #}
+
+    {% comment %} 
+        comentario de 
+        dos o mas lineas
+    {% endcomment %}
+
+    <h1>Esta es mi primera plantilla</h1>
+    <p>Mi nombre es: {{nombre_persona}} {{apellido_persona.upper}}</p>
+    <p>La fecha actual es {{momento_actual.day}}/{{momento_actual.month}}/{{momento_actual.year}}</p>
+    <p>{{temas}}</p>
+    <p>{{temas.1}}</p>
+    <p> 
+        <ul>
+            {% if temas %}
+                {% for elTema in temas %}
+                <li>{{elTema}}</li>
+                {% endfor %}
+            {% else %}
+                <p>No hay elementos que mostrar</p>
+            {% endif %}
+        </ul>
+    </p>
+
+    {% comment %} 
+        podemos tambien colocar en mayusculas o minusculas las
+        letras usando pipes(tuberias o filtros)
+    {% endcomment %}
+
+    <p>{{temas.0|upper}}</p>
+    <p>{{temas.1|lower}}</p>
+    <p>{{temas.2|first|lower}}</p>
+</body>
+</html>

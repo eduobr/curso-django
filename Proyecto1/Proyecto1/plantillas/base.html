@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {# Este bloque puede cambiar#}
+        {% block title %} {% endblock %}
+    </title>
+</head>
+<body>
+    
+    <h1>Pildoras Informáticas</h1>
+    <h3>Curso de programación ofimática</h3>
+    
+    {% include "navegacion/barra.html" %}
+    
+    {# lo que esta dentro de las siguientes etiquetas cambiará #}
+    {% block content %}
+
+    {% endblock%}
+    <p>
+        Cursos gratuitos gracias por su visita
+    </p>
+</body>
+</html>
